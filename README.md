@@ -1,17 +1,17 @@
-# 🌤️ Weather App - powered with AI Travel Advisory
+# Weather App - powered with AI Travel Advisory
 
 An intelligent, interactive weather application built with **Python, Streamlit, GPT, HuggingFace, LangChain, and multiple APIs**, designed to provide **accurate weather updates**, **AI-generated travel advisory**.
 
 ---
 
-## 🚀 Features
+## Features
 
 ### **1. AI Travel Advisory**
 - Enter a **location** and select the **number of days** for the forecast.
 - Get **AI-generated** advice including:
-  - ✈️ **Travel advice**
-  - 🌦️ **Weather-specific guidance**
-  - 🩺 **Health precautions**
+  - **Travel advice**
+  - **Weather-specific guidance**
+  - **Health precautions**
 - Powered by **LangChain + HuggingFace LLM** with live weather data.
 
 ---
@@ -32,9 +32,9 @@ An intelligent, interactive weather application built with **Python, Streamlit, 
 
 ### **3. Explore More About the Location**
 - Enter a location to:
-  - 🌍 View **interactive Google Map** 
-  - ▶️ See **related YouTube videos**
-  - 🖼️ Displays **related Unsplash images**
+  - View **interactive Google Map** 
+  - See **related YouTube videos**
+  - Displays **related Unsplash images**
 
 ---
 
@@ -43,7 +43,7 @@ An intelligent, interactive weather application built with **Python, Streamlit, 
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Component | Technology |
 |-----------|------------|
