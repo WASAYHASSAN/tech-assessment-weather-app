@@ -9,12 +9,10 @@ import sqlite3, requests
 import os, json
 from langchain_huggingface import ChatHuggingFace, HuggingFaceEndpoint
 from io import BytesIO
-from dotenv import load_dotenv
 
-load_dotenv()
 
-YOUTUBE_API_KEY = os.getenv("YOUTUBE_API_KEY")
-UNSPLASH_ACCESS_KEY = os.getenv("UNSPLASH_ACCESS_KEY")
+UNSPLASH_ACCESS_KEY = st.secrets["UNSPLASH_ACCESS_KEY"]
+YOUTUBE_API_KEY = st.secrets["YOUTUBE_API_KEY"]
 
 # Page Config
 st.set_page_config(page_title="Weather App", layout="wide", page_icon="⛅")
