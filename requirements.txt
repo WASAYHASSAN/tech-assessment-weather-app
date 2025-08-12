@@ -1,0 +1,7 @@
+streamlit==1.38.0
+geopy==2.4.1
+pandas==2.2.2
+requests==2.32.3
+langchain-core==0.2.39
+langchain-community==0.2.16
+langchain-huggingface==0.0.3
