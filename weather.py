@@ -367,33 +367,68 @@ if lat and lon:
 
 def get_youtube_videos(query, max_results=3):
     """Fetch YouTube videos related to the location."""
-    url = f"https://www.googleapis.com/youtube/v3/search?part=snippet&q={urllib.parse.quote(query)}&key={YOUTUBE_API_KEY}&maxResults={max_results}&type=video"
-    response = requests.get(url)
-    if response.status_code == 200:
+    url = (
+        "https://www.googleapis.com/youtube/v3/search"
+        f"?part=snippet&q={urllib.parse.quote(query)}"
+        f"&key={YOUTUBE_API_KEY}"
+        f"&maxResults={max_results}&type=video"
+    )
+
+    try:
+        response = requests.get(url, timeout=10)
+        response.raise_for_status()
         data = response.json()
-        videos = [
-            {
-                "title": item["snippet"]["title"],
-                "video_id": item["id"]["videoId"],
-                "thumbnail": item["snippet"]["thumbnails"]["medium"]["url"]
-            }
-            for item in data.get("items", [])
-        ]
+
+        videos = []
+        for item in data.get("items", []):
+            video_id = item.get("id", {}).get("videoId")
+            snippet = item.get("snippet", {})
+            thumbnail_url = snippet.get("thumbnails", {}).get("medium", {}).get("url")
+
+            if video_id and thumbnail_url:
+                videos.append({
+                    "title": snippet.get("title", "No Title"),
+                    "video_id": video_id,
+                    "thumbnail": thumbnail_url
+                })
         return videos
+
+    except requests.RequestException as e:
+        st.error(f"Error fetching YouTube videos: {e}")
+    except Exception as e:
+        st.error(f"Unexpected error: {e}")
+
     return []
 
 
 
 def get_unsplash_images(query, count=3):
     """Fetch images from Unsplash API."""
-    url = f"https://api.unsplash.com/search/photos?query={urllib.parse.quote(query)}&client_id={UNSPLASH_ACCESS_KEY}&per_page={count}"
-    response = requests.get(url)
+    url = (
+        f"https://api.unsplash.com/search/photos"
+        f"?query={urllib.parse.quote(query)}"
+        f"&client_id={UNSPLASH_ACCESS_KEY}&per_page={count}"
+    )
 
-
-    if response.status_code == 200:
+    try:
+        response = requests.get(url, timeout=10)
+        response.raise_for_status()
         data = response.json()
-        return [img["urls"]["regular"] for img in data.get("results", [])]
+
+        images = [
+            img.get("urls", {}).get("regular")
+            for img in data.get("results", [])
+            if img.get("urls", {}).get("regular")
+        ]
+        return images
+
+    except requests.RequestException as e:
+        st.error(f"Error fetching Unsplash images: {e}")
+    except Exception as e:
+        st.error(f"Unexpected error: {e}")
+
     return []
+
 
 
 
