@@ -22,7 +22,7 @@ An intelligent, interactive weather application built with **Python, Streamlit, 
   - Landmark (e.g., `Eiffel Tower`)
   - Latitude & Longitude (e.g., `48.8584, 2.2945`)
 - Displays:
-  - **Current weather** (temperature, wind speed, description, emoji)
+  - **Current weather** (temperature, wind speed, precipitation)
   - **5-day forecast**
 - Maintains **search history** in SQLite:
   - Load previous weather results
@@ -57,3 +57,8 @@ An intelligent, interactive weather application built with **Python, Streamlit, 
 | **Deployment** | Streamlit Cloud |
 
 ---
+
+- This repository does not contain private API keys.
+- This Application is hosted on Streamlit Community Cloud accessable via the provided link in the PM Google Form.
+- Current location fetching is disabled because of IP security issues, the user can get their location's forecast by using the "Weather Update" section.
+- If intended for local use, provide personal API keys for the variables defined under st.secrets("YOUR_API_KEY_HERE").
