@@ -208,14 +208,18 @@ def format_temp(t): return f"{t:.1f}°C"
 # DB Functions
 def init_history_db():
     conn = sqlite3.connect(HISTORY_DB)
-    conn.execute("""
+    cur = conn.cursor()
+    cur.execute(
+        """
         CREATE TABLE IF NOT EXISTS history (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             query TEXT UNIQUE,
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         )
-    """)
-    conn.commit(); conn.close()
+    """
+    )
+    conn.commit()
+    conn.close()
 
 def add_to_history(query):
     conn = sqlite3.connect(HISTORY_DB)
