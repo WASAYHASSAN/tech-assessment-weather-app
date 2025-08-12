@@ -1,6 +1,6 @@
-# 🌤️ AI-Powered Weather & Travel Advisory App
+# 🌤️ Weather App - powered with AI Travel Advisory
 
-An intelligent, interactive weather application built with **Python, Streamlit, GPT, HuggingFace, LangChain, and multiple APIs**, designed to provide **accurate weather updates**, **AI-generated travel recommendations**, and **rich location insights** — all in one place.
+An intelligent, interactive weather application built with **Python, Streamlit, GPT, HuggingFace, LangChain, and multiple APIs**, designed to provide **accurate weather updates**, **AI-generated travel advisory**.
 
 ---
 
@@ -8,7 +8,7 @@ An intelligent, interactive weather application built with **Python, Streamlit, 
 
 ### **1. AI Travel Advisory**
 - Enter a **location** and select the **number of days** for the forecast.
-- Get **AI-generated** recommendations including:
+- Get **AI-generated** advice including:
   - ✈️ **Travel advice**
   - 🌦️ **Weather-specific guidance**
   - 🩺 **Health precautions**
@@ -32,9 +32,9 @@ An intelligent, interactive weather application built with **Python, Streamlit, 
 
 ### **3. Explore More About the Location**
 - Enter a location to:
-  - 🌍 View **interactive Google Map**
+  - 🌍 View **interactive Google Map** 
   - ▶️ See **related YouTube videos**
-  - 🖼️ Browse **related Unsplash images**
+  - 🖼️ Displays **related Unsplash images**
 
 ---
 
@@ -50,7 +50,7 @@ An intelligent, interactive weather application built with **Python, Streamlit, 
 | **Frontend** | Streamlit |
 | **Backend** | Python |
 | **AI Processing** | GPT (via HuggingFace + LangChain) |
-| **Weather Data** | Weather API (Open-Meteo or similar) |
+| **Weather Data** | Weather API |
 | **Media Content** | YouTube API, Unsplash API |
 | **Location Services** | Geopy |
 | **Database** | SQLite3 |
